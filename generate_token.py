@@ -7,7 +7,7 @@ from google.oauth2.credentials import Credentials
 
 def authenticate():
     creds = None
-    token_file = 'token101.json'
+    token_file = 'token_miramar.json'
     credentials_file = 'calendar-api.json'
     scopes = ['https://www.googleapis.com/auth/calendar']
 
@@ -34,16 +34,16 @@ def create_event():
         'summary': 'test!',
         'location': 'Abu Dhabi Al Wahda',
         'start': {
-            'dateTime': '2023-10-13T10:00:00',
+            'dateTime': '2023-10-15T10:00:00',
             'timeZone': 'America/New_York',
         },
         'end': {
-            'dateTime': '2023-10-13T11:00:00',
+            'dateTime': '2023-10-15T11:00:00',
             'timeZone': 'America/New_York',
         },
     }
 
-    calendar_id = 'id_here'
+    calendar_id = 'primary'
     event = service.events().insert(calendarId=calendar_id, body=event).execute()
 
     print('Event created: %s' % (event.get('htmlLink')))
